@@ -1,0 +1,31 @@
+{
+  "title": "Level: Us",
+  "subtitle": "Quatro mini-jogos sobre a gente.",
+  "wordSearch": {
+    "title": "Caça-Palavras",
+    "words": ["DESTINO", "PRINCESA", "COMECO", "BEIJO", "LONDRES", "FESTA", "AMOR", "CONEXAO"]
+  },
+  "tennis": {
+    "title": "Tennis Match",
+    "questions": [
+      { "q": "Onde nos beijamos pela primeira vez?", "options": ["Paris", "Ribeirão Preto", "Londres"], "answer": 1 },
+      { "q": "Qual cidade marcou os JO 2024?", "options": ["Paris", "Munich", "Venise"], "answer": 0 },
+      { "q": "Nossa primeira viagem internacional juntos?", "options": ["Londres", "Amsterdam", "Champagne"], "answer": 1 },
+      { "q": "Qual destes lugares tem o lago mais azul?", "options": ["Deauville", "Annecy", "Brotas"], "answer": 1 },
+      { "q": "Onde oficializamos o relacionamento?", "options": ["Paris", "Ribeirão Preto", "Belo Horizonte"], "answer": 1 }
+    ]
+  },
+  "f1": {
+    "title": "F1: Nossa Pista",
+    "checkpoints": [
+      { "date": "17/06/2024", "title": "Primeiro encontro", "memory": "O dia em que nossos olhos se cruzaram pela primeira vez. Tudo começou ali, sem a gente saber." },
+      { "date": "29/06/2024", "title": "A noite dos príncipes", "memory": "Encontramos os príncipes. E também encontramos a gente — mais profundo, mais real." },
+      { "date": "01/07/2024", "title": "O primeiro beijo", "memory": "Um beijo curto, um capítulo inteiro. O começo oficial da nossa história." },
+      { "date": "09/09/2025", "title": "Oficializamos", "memory": "Não era mais uma história contada em segredo. Agora era nossa, no mundo." }
+    ]
+  },
+  "sinuca": {
+    "title": "Sinuca Challenge",
+    "order": ["1", "2", "3", "4", "5"]
+  }
+}
