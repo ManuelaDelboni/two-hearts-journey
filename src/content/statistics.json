@@ -1,0 +1,12 @@
+{
+  "title": "By the Numbers",
+  "subtitle": "Métricas de um amor de longa distância.",
+  "items": [
+    { "label": "Dias juntos", "value": 730, "suffix": "", "icon": "heart" },
+    { "label": "Voos realizados", "value": 18, "suffix": "", "icon": "plane" },
+    { "label": "Quilômetros percorridos", "value": 184000, "suffix": " km", "icon": "globe" },
+    { "label": "Chamadas de vídeo", "value": 1240, "suffix": "", "icon": "video" },
+    { "label": "Fusos horários atravessados", "value": 4, "suffix": "", "icon": "clock" },
+    { "label": "Cafés compartilhados", "value": 612, "suffix": "", "icon": "coffee" }
+  ]
+}
