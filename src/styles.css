@@ -28,47 +28,50 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  /* Token names kept (--gold/--ember) to avoid a wide refactor — they now hold
+     the tech blue palette used across all non-popup sections. */
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
   --color-rose: var(--rose);
   --color-ember: var(--ember);
-  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-display: Arial, Helvetica, "Liberation Sans", sans-serif;
   --font-hand: "Caveat", "Dancing Script", cursive;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-body: Arial, Helvetica, "Liberation Sans", sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
-  /* Dark, warm, cinematic */
-  --background: oklch(0.16 0.018 40);
-  --foreground: oklch(0.96 0.012 80);
-  --card: oklch(0.21 0.022 45);
-  --card-foreground: oklch(0.96 0.012 80);
-  --popover: oklch(0.19 0.02 45);
-  --popover-foreground: oklch(0.96 0.012 80);
-  --primary: oklch(0.82 0.14 80);            /* warm gold */
-  --primary-foreground: oklch(0.18 0.02 40);
-  --secondary: oklch(0.28 0.03 40);
-  --secondary-foreground: oklch(0.96 0.012 80);
-  --muted: oklch(0.24 0.02 40);
-  --muted-foreground: oklch(0.72 0.02 70);
-  --accent: oklch(0.55 0.18 30);             /* warm ember */
-  --accent-foreground: oklch(0.98 0 0);
+  --radius: 0.375rem;
+  /* Classic tech: blue + white */
+  --background: oklch(0.99 0.005 240);
+  --foreground: oklch(0.22 0.04 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 250);
+  --primary: oklch(0.52 0.22 255);            /* tech blue */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.02 250);
+  --secondary-foreground: oklch(0.22 0.04 250);
+  --muted: oklch(0.96 0.01 250);
+  --muted-foreground: oklch(0.48 0.03 250);
+  --accent: oklch(0.62 0.20 250);
+  --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.6 0.22 25);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.32 0.02 50 / 60%);
-  --input: oklch(0.3 0.02 50);
-  --ring: oklch(0.82 0.14 80);
+  --border: oklch(0.88 0.02 250 / 80%);
+  --input: oklch(0.92 0.02 250);
+  --ring: oklch(0.52 0.22 255);
 
-  --gold: oklch(0.82 0.14 80);
-  --gold-soft: oklch(0.88 0.09 85);
-  --rose: oklch(0.7 0.13 20);
-  --ember: oklch(0.55 0.18 30);
+  /* "gold" tokens repurposed → tech blue */
+  --gold: oklch(0.52 0.22 255);
+  --gold-soft: oklch(0.70 0.16 250);
+  --rose: oklch(0.62 0.18 255);
+  --ember: oklch(0.38 0.20 260);
 
-  --gradient-warm: linear-gradient(135deg, oklch(0.22 0.03 40) 0%, oklch(0.16 0.018 40) 60%, oklch(0.18 0.04 25) 100%);
+  --gradient-warm: linear-gradient(135deg, oklch(0.99 0.005 240) 0%, oklch(0.96 0.02 250) 60%, oklch(0.92 0.04 255) 100%);
   --gradient-gold: linear-gradient(135deg, var(--gold-soft), var(--gold) 50%, var(--ember));
-  --shadow-warm: 0 30px 80px -30px oklch(0 0 0 / 0.7), 0 0 0 1px oklch(0.82 0.14 80 / 0.08);
-  --shadow-glow: 0 0 60px -10px oklch(0.82 0.14 80 / 0.35);
+  --shadow-warm: 0 20px 60px -25px oklch(0.30 0.10 255 / 0.35), 0 0 0 1px oklch(0.52 0.22 255 / 0.10);
+  --shadow-glow: 0 0 40px -8px oklch(0.52 0.22 255 / 0.35);
 }
 
 @layer base {
@@ -85,14 +88,16 @@
     color: var(--color-foreground);
     font-family: var(--font-body);
     background-image:
-      radial-gradient(ellipse at top, oklch(0.28 0.06 35 / 0.6), transparent 60%),
-      radial-gradient(ellipse at bottom right, oklch(0.32 0.1 30 / 0.4), transparent 60%);
+      radial-gradient(ellipse at top left, oklch(0.85 0.08 255 / 0.35), transparent 55%),
+      radial-gradient(ellipse at bottom right, oklch(0.78 0.12 250 / 0.25), transparent 60%),
+      linear-gradient(180deg, transparent 0, oklch(0.94 0.03 250 / 0.4) 100%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
     font-family: var(--font-display);
     letter-spacing: -0.01em;
+    font-weight: 700;
   }
 }
 
@@ -124,9 +129,17 @@
   font-family: var(--font-display);
 }
 
-/* Subtle paper texture for the book */
+/* Subtle grid texture — tech feel */
+@utility tech-grid {
+  background-image:
+    linear-gradient(oklch(0.52 0.22 255 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.52 0.22 255 / 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Paper texture preserved for the book popup */
 @utility paper-texture {
-  background-color: oklch(0.94 0.03 85);
+  background-color: oklch(0.97 0.015 85);
   background-image:
     radial-gradient(oklch(0.7 0.07 60 / 0.08) 1px, transparent 1px),
     radial-gradient(oklch(0.7 0.07 60 / 0.06) 1px, transparent 1px);
@@ -135,7 +148,6 @@
   color: oklch(0.2 0.03 40);
 }
 
-/* Twinkling stars */
 @keyframes twinkle {
   0%, 100% { opacity: 0.35; transform: scale(1); }
   50% { opacity: 1; transform: scale(1.4); }
