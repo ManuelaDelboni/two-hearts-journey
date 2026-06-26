@@ -24,8 +24,8 @@ export function Header() {
         scrolled ? "backdrop-blur-xl" : ""
       }`}
       style={{
-        background: scrolled ? "oklch(0.16 0.02 40 / 0.7)" : "transparent",
-        borderBottom: scrolled ? "1px solid oklch(0.82 0.14 80 / 0.12)" : "1px solid transparent",
+        background: scrolled ? "oklch(1 0 0 / 0.8)" : "transparent",
+        borderBottom: scrolled ? "1px solid oklch(0.52 0.22 255 / 0.18)" : "1px solid transparent",
       }}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8">
