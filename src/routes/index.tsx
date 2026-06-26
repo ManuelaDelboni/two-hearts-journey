@@ -31,7 +31,12 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [bookOpen, setBookOpen] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const t = setTimeout(() => setBookOpen(true), 400);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div id="top" className="relative min-h-screen">
@@ -78,12 +83,21 @@ function Index() {
             transition={{ delay: 2.6, duration: 1 }}
             className="mt-10"
           >
-            <a
-              href="#travels"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--gold)]/30 px-6 py-3 text-sm uppercase tracking-[0.18em] text-gold transition-all hover:bg-[var(--gold)]/10 hover:shadow-glow"
-            >
-              Começar a leitura ↓
-            </a>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="#travels"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-primary-foreground transition-all hover:opacity-90 hover:shadow-glow"
+              >
+                Começar a leitura ↓
+              </a>
+              <button
+                type="button"
+                onClick={() => setBookOpen(true)}
+                className="inline-flex items-center gap-2 rounded-md border border-[var(--gold)]/40 bg-card px-6 py-3 text-sm font-semibold uppercase tracking-[0.14em] text-gold transition-all hover:bg-[var(--gold)]/10"
+              >
+                Abrir o livro ✦
+              </button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -104,7 +118,7 @@ function Index() {
         </p>
       </footer>
 
-      <BookDialog />
+      <BookDialog open={bookOpen} onClose={() => setBookOpen(false)} />
     </div>
   );
 }
