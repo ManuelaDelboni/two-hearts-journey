@@ -50,6 +50,29 @@ function Index() {
               "radial-gradient(ellipse at center, oklch(0.3 0.08 30 / 0.6), transparent 60%)",
           }}
         />
+        <motion.div
+          aria-hidden
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
+          className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center select-none"
+        >
+          <span
+            className="font-display leading-none"
+            style={{
+              fontSize: "clamp(20rem, 60vw, 56rem)",
+              fontWeight: 800,
+              background:
+                "linear-gradient(180deg, oklch(0.52 0.22 255 / 0.10), oklch(0.52 0.22 255 / 0.02))",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              WebkitTextStroke: "1px oklch(0.52 0.22 255 / 0.18)",
+            }}
+          >
+            2
+          </span>
+        </motion.div>
         <div className="mx-auto max-w-4xl text-center">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
