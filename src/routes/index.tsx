@@ -31,7 +31,12 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [bookOpen, setBookOpen] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+    const t = setTimeout(() => setBookOpen(true), 400);
+    return () => clearTimeout(t);
+  }, []);
 
   return (
     <div id="top" className="relative min-h-screen">
