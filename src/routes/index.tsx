@@ -118,7 +118,7 @@ function Index() {
         </p>
       </footer>
 
-      <BookDialog />
+      <BookDialog open={bookOpen} onClose={() => setBookOpen(false)} />
     </div>
   );
 }
