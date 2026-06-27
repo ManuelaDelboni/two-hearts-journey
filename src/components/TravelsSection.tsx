@@ -90,7 +90,7 @@ export function TravelsSection() {
                     <Marker
                       key={c.id}
                       coordinates={c.coords as [number, number]}
-                      onClick={() => setSelected(c)}
+                      onClick={() => setSelectedIndex(travels.cities.findIndex((x) => x.id === c.id))}
                       style={{ default: { cursor: "pointer" }, hover: { cursor: "pointer" }, pressed: { cursor: "pointer" } }}
                     >
                       <g style={{ transform: `scale(${scale})`, transformBox: "fill-box", transformOrigin: "center" }}>
