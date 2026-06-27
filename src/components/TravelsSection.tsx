@@ -18,7 +18,7 @@ const GEO_URL =
 type City = (typeof travels.cities)[number];
 
 export function TravelsSection() {
-  const [selected, setSelected] = useState<City | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
     coordinates: [-20, 20],
     zoom: 1,
