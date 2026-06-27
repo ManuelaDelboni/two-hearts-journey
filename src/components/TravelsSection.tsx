@@ -158,10 +158,9 @@ export function TravelsSection() {
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
           {travels.cities.map((c) => (
             <button
+              key={c.id}
               onDoubleClick={() => setSelected(c)}
               onClick={() => focusCity(c)}
-              key={c.id}
-              onClick={() => setSelected(c)}
               className="group rounded-xl border border-[var(--gold)]/10 bg-card/40 px-3 py-3 text-left transition-all hover:border-[var(--gold)]/40 hover:bg-card/70"
             >
               <p className={`text-sm font-medium ${c.type === "home" ? "text-gold" : "text-foreground/90"}`}>
