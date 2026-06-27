@@ -353,6 +353,3 @@ function PassportBook({
     </motion.div>
   );
 }
-
-  );
-}
