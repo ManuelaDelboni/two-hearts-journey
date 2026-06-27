@@ -84,6 +84,7 @@ export function TravelsSection() {
 
                 {travels.cities.map((c) => {
                   const isHome = c.type === "home";
+                  const scale = 1 / Math.sqrt(position.zoom);
                   return (
                     <Marker
                       key={c.id}
@@ -91,7 +92,12 @@ export function TravelsSection() {
                       onClick={() => setSelected(c)}
                       style={{ default: { cursor: "pointer" }, hover: { cursor: "pointer" }, pressed: { cursor: "pointer" } }}
                     >
-                      <g>
+                      <g style={{ transform: `scale(${scale})`, transformBox: "fill-box", transformOrigin: "center" }}>
+                        <circle
+                          r={isHome ? 10 : 7}
+                          fill="transparent"
+                          style={{ pointerEvents: "all" }}
+                        />
                         <circle
                           r={isHome ? 7 : 4}
                           fill={isHome ? "oklch(0.65 0.22 25)" : "oklch(0.7 0.15 240)"}
