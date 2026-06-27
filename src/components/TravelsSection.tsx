@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ComposableMap,
   Geographies,
@@ -10,6 +10,7 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 import travels from "@/content/travels.json";
 import { SectionTitle } from "./SectionTitle";
+
 
 const GEO_URL =
   "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
