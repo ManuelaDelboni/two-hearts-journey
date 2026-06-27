@@ -291,16 +291,16 @@ function PassportBook({
           </div>
 
           {/* Page flip */}
-          <AnimatePresence mode="popLayout" custom={direction}>
+          <AnimatePresence mode="popLayout">
             <motion.div
               key={city.id}
-              custom={direction}
-              initial={(d: 1 | -1) => ({ rotateX: d === 1 ? 90 : -90, opacity: 0, y: d === 1 ? 40 : -40 })}
+              initial={{ rotateX: direction === 1 ? 90 : -90, opacity: 0, y: direction === 1 ? 40 : -40 }}
               animate={{ rotateX: 0, opacity: 1, y: 0 }}
-              exit={(d: 1 | -1) => ({ rotateX: d === 1 ? -90 : 90, opacity: 0, y: d === 1 ? -40 : 40 })}
+              exit={{ rotateX: direction === 1 ? -90 : 90, opacity: 0, y: direction === 1 ? -40 : 40 }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               style={{ transformOrigin: "center center", backfaceVisibility: "hidden" }}
               className="absolute inset-0 flex flex-col px-6 pb-6 pt-20 sm:px-10"
+
             >
               {/* Photo */}
               <div className="relative flex-1 overflow-hidden rounded-lg border border-[var(--gold)]/20 bg-black/40">
