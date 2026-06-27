@@ -188,61 +188,171 @@ export function TravelsSection() {
   );
 }
 
-function PassportModal({ city, onClose }: { city: City; onClose: () => void }) {
+function PassportBook({
+  cities,
+  index,
+  onChange,
+  onClose,
+}: {
+  cities: City[];
+  index: number;
+  onChange: (i: number) => void;
+  onClose: () => void;
+}) {
+  const [direction, setDirection] = useState<1 | -1>(1);
+  const city = cities[index];
+
+  const go = (d: 1 | -1) => {
+    const next = index + d;
+    if (next < 0 || next >= cities.length) return;
+    setDirection(d);
+    onChange(next);
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); go(1); }
+      else if (e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(-1); }
+      else if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  });
+
+  let wheelLock = false;
+  const onWheel = (e: React.WheelEvent) => {
+    if (wheelLock) return;
+    if (Math.abs(e.deltaY) < 30) return;
+    wheelLock = true;
+    go(e.deltaY > 0 ? 1 : -1);
+    setTimeout(() => { wheelLock = false; }, 600);
+  };
+
   return (
     <motion.div
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-black/85 p-4 backdrop-blur-md"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       onClick={onClose}
+      onWheel={onWheel}
     >
-      <motion.div
-        initial={{ scale: 0.85, opacity: 0, rotate: -2 }}
-        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-        exit={{ scale: 0.9, opacity: 0 }}
-        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-        onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-md overflow-hidden rounded-xl border-2 border-[oklch(0.35_0.1_25)] shadow-warm"
-        style={{
-          background: "linear-gradient(135deg, oklch(0.28 0.08 25), oklch(0.22 0.06 20))",
-        }}
+      <button
+        onClick={onClose}
+        className="absolute right-5 top-5 z-10 rounded-full border border-white/20 bg-black/40 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/80 backdrop-blur hover:bg-black/60"
       >
-        <div className="border-b border-[var(--gold)]/30 bg-[oklch(0.22_0.06_25)] px-5 py-3">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-gold/70">Passport · Carimbo</p>
-          <p className="font-display text-sm text-foreground/80">Nossa caderneta de viagem</p>
-        </div>
-        <div className="p-6">
-          <div className="flex items-start justify-between gap-4">
+        Fechar ✕
+      </button>
+
+      {/* Vertical nav buttons */}
+      <div className="absolute right-5 top-1/2 z-10 flex -translate-y-1/2 flex-col gap-3">
+        <button
+          onClick={(e) => { e.stopPropagation(); go(-1); }}
+          disabled={index === 0}
+          className="grid h-11 w-11 place-items-center rounded-full border border-[var(--gold)]/40 bg-black/50 text-gold backdrop-blur transition hover:bg-black/70 disabled:opacity-30"
+          aria-label="Página anterior"
+        >
+          ▲
+        </button>
+        <span className="text-center font-mono text-[10px] text-white/60">
+          {String(index + 1).padStart(2, "0")} / {String(cities.length).padStart(2, "0")}
+        </span>
+        <button
+          onClick={(e) => { e.stopPropagation(); go(1); }}
+          disabled={index === cities.length - 1}
+          className="grid h-11 w-11 place-items-center rounded-full border border-[var(--gold)]/40 bg-black/50 text-gold backdrop-blur transition hover:bg-black/70 disabled:opacity-30"
+          aria-label="Próxima página"
+        >
+          ▼
+        </button>
+      </div>
+
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative w-full max-w-3xl"
+        style={{ perspective: "2000px" }}
+      >
+        <div
+          className="relative w-full overflow-hidden rounded-2xl border-2 shadow-warm"
+          style={{
+            aspectRatio: "3 / 4",
+            maxHeight: "85vh",
+            background: "linear-gradient(135deg, oklch(0.30 0.09 25), oklch(0.20 0.06 20))",
+            borderColor: "oklch(0.40 0.12 25)",
+          }}
+        >
+          {/* Header */}
+          <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between border-b border-[var(--gold)]/30 bg-[oklch(0.20_0.06_25)]/90 px-5 py-3 backdrop-blur">
             <div>
-              <h3 className="font-display text-3xl text-gradient-gold">{city.name}</h3>
-              <p className="text-sm uppercase tracking-wider text-foreground/60">{city.country}</p>
+              <p className="text-[10px] uppercase tracking-[0.3em] text-gold/70">Passport · Carimbo</p>
+              <p className="font-display text-sm text-foreground/80">Nossa caderneta de viagem</p>
             </div>
-            <div
-              className="grid h-20 w-20 shrink-0 place-items-center rounded-full border-2 text-center text-[10px] font-bold uppercase leading-tight"
-              style={{
-                borderColor: city.type === "home" ? "oklch(0.65 0.22 25)" : "oklch(0.7 0.15 240)",
-                color: city.type === "home" ? "oklch(0.75 0.2 25)" : "oklch(0.78 0.13 240)",
-                transform: "rotate(-12deg)",
-              }}
-            >
-              {city.type === "home" ? "HOME" : "VISITED"}
-              <br />
-              <span className="text-[8px] font-normal">{city.name}</span>
-            </div>
+            <p className="font-mono text-[10px] text-white/40">No. {String(index + 1).padStart(3, "0")}</p>
           </div>
-          <p className="mt-5 font-display text-lg italic text-foreground/85">"{city.note}"</p>
-          {city.photo && (
-            <img src={city.photo} alt={city.name} className="mt-4 w-full rounded-lg object-cover" />
-          )}
-          <button
-            onClick={onClose}
-            className="mt-6 w-full rounded-md bg-gold py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            Fechar passaporte
-          </button>
+
+          {/* Page flip */}
+          <AnimatePresence mode="popLayout" custom={direction}>
+            <motion.div
+              key={city.id}
+              custom={direction}
+              initial={(d: 1 | -1) => ({ rotateX: d === 1 ? 90 : -90, opacity: 0, y: d === 1 ? 40 : -40 })}
+              animate={{ rotateX: 0, opacity: 1, y: 0 }}
+              exit={(d: 1 | -1) => ({ rotateX: d === 1 ? -90 : 90, opacity: 0, y: d === 1 ? -40 : 40 })}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              style={{ transformOrigin: "center center", backfaceVisibility: "hidden" }}
+              className="absolute inset-0 flex flex-col px-6 pb-6 pt-20 sm:px-10"
+            >
+              {/* Photo */}
+              <div className="relative flex-1 overflow-hidden rounded-lg border border-[var(--gold)]/20 bg-black/40">
+                {city.photo ? (
+                  <img
+                    src={city.photo}
+                    alt={city.name}
+                    onError={(e) => { (e.currentTarget.style.display = "none"); }}
+                    className="h-full w-full object-cover"
+                  />
+                ) : null}
+                <div className="pointer-events-none absolute inset-0 grid place-items-center text-center text-xs uppercase tracking-[0.3em] text-white/30">
+                  <span>Adicione uma foto em<br />public{city.photo}</span>
+                </div>
+                {/* Stamp */}
+                <div
+                  className="absolute right-4 top-4 grid h-20 w-20 place-items-center rounded-full border-2 text-center text-[10px] font-bold uppercase leading-tight backdrop-blur"
+                  style={{
+                    borderColor: city.type === "home" ? "oklch(0.75 0.2 25)" : "oklch(0.78 0.13 240)",
+                    color: city.type === "home" ? "oklch(0.85 0.2 25)" : "oklch(0.85 0.13 240)",
+                    background: "rgba(0,0,0,0.35)",
+                    transform: "rotate(-12deg)",
+                  }}
+                >
+                  {city.type === "home" ? "HOME" : "VISITED"}
+                </div>
+              </div>
+
+              {/* Caption */}
+              <div className="mt-5 flex items-end justify-between gap-4">
+                <div>
+                  <h3 className="font-display text-3xl text-gradient-gold sm:text-4xl">{city.name}</h3>
+                  <p className="text-xs uppercase tracking-[0.2em] text-foreground/60">{city.country}</p>
+                  <p className="mt-2 font-display text-base italic text-foreground/80">"{city.note}"</p>
+                </div>
+                <div className="shrink-0 text-right">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-gold/60">Data</p>
+                  <p className="font-mono text-sm text-foreground/90">{city.date ?? "—"}</p>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Hint */}
+          <div className="pointer-events-none absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-white/40">
+            ▲ ▼ para virar a página
+          </div>
         </div>
-      </motion.div>
+      </div>
     </motion.div>
+  );
+}
+
   );
 }
