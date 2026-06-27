@@ -43,7 +43,13 @@ export function TravelsSection() {
               projectionConfig={{ scale: 160 }}
               style={{ width: "100%", height: "100%", background: "transparent" }}
             >
-              <ZoomableGroup center={[-20, 20]} zoom={1} minZoom={0.8} maxZoom={40}>
+              <ZoomableGroup
+                center={position.coordinates}
+                zoom={position.zoom}
+                minZoom={0.8}
+                maxZoom={40}
+                onMoveEnd={(pos) => setPosition(pos)}
+              >
                 <Geographies geography={GEO_URL}>
                   {({ geographies }) =>
                     geographies.map((geo) => (
