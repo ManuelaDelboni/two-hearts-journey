@@ -157,10 +157,10 @@ export function TravelsSection() {
 
         {/* City list */}
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
-          {travels.cities.map((c) => (
+          {travels.cities.map((c, i) => (
             <button
               key={c.id}
-              onDoubleClick={() => setSelected(c)}
+              onDoubleClick={() => setSelectedIndex(i)}
               onClick={() => focusCity(c)}
               className="group rounded-xl border border-[var(--gold)]/10 bg-card/40 px-3 py-3 text-left transition-all hover:border-[var(--gold)]/40 hover:bg-card/70"
             >
@@ -174,8 +174,16 @@ export function TravelsSection() {
       </div>
 
       <AnimatePresence>
-        {selected && <PassportModal city={selected} onClose={() => setSelected(null)} />}
+        {selectedIndex !== null && (
+          <PassportBook
+            cities={travels.cities as City[]}
+            index={selectedIndex}
+            onChange={setSelectedIndex}
+            onClose={() => setSelectedIndex(null)}
+          />
+        )}
       </AnimatePresence>
+
     </section>
   );
 }
