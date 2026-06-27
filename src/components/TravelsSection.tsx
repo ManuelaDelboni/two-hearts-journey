@@ -130,10 +130,37 @@ export function TravelsSection() {
           </div>
         </div>
 
+          <div className="absolute right-4 top-4 flex flex-col gap-1 sm:right-6 sm:top-6">
+            <button
+              onClick={handleZoomIn}
+              className="grid h-9 w-9 place-items-center rounded-md border border-[var(--gold)]/20 bg-background/80 text-lg font-bold backdrop-blur-md transition hover:bg-background"
+              aria-label="Zoom in"
+            >
+              +
+            </button>
+            <button
+              onClick={handleZoomOut}
+              className="grid h-9 w-9 place-items-center rounded-md border border-[var(--gold)]/20 bg-background/80 text-lg font-bold backdrop-blur-md transition hover:bg-background"
+              aria-label="Zoom out"
+            >
+              −
+            </button>
+            <button
+              onClick={handleReset}
+              className="grid h-9 w-9 place-items-center rounded-md border border-[var(--gold)]/20 bg-background/80 text-[10px] font-bold backdrop-blur-md transition hover:bg-background"
+              aria-label="Reset"
+            >
+              ⟲
+            </button>
+          </div>
+        </div>
+
         {/* City list */}
         <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-6">
           {travels.cities.map((c) => (
             <button
+              onDoubleClick={() => setSelected(c)}
+              onClick={() => focusCity(c)}
               key={c.id}
               onClick={() => setSelected(c)}
               className="group rounded-xl border border-[var(--gold)]/10 bg-card/40 px-3 py-3 text-left transition-all hover:border-[var(--gold)]/40 hover:bg-card/70"
