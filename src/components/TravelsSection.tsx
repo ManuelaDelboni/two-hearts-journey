@@ -128,7 +128,6 @@ export function TravelsSection() {
             </div>
             <div className="text-[10px] text-muted-foreground">Use o scroll para dar zoom · clique nos pinos</div>
           </div>
-        </div>
 
           <div className="absolute right-4 top-4 flex flex-col gap-1 sm:right-6 sm:top-6">
             <button
