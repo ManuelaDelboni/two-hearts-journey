@@ -18,9 +18,19 @@ type City = (typeof travels.cities)[number];
 
 export function TravelsSection() {
   const [selected, setSelected] = useState<City | null>(null);
+  const [position, setPosition] = useState<{ coordinates: [number, number]; zoom: number }>({
+    coordinates: [-20, 20],
+    zoom: 1,
+  });
   const homes = useMemo(() => travels.cities.filter((c) => c.type === "home"), []);
   const fromHome = homes.find((c) => c.id === "ribeirao");
   const toHome = homes.find((c) => c.id === "paris");
+
+  const handleZoomIn = () => setPosition((p) => ({ ...p, zoom: Math.min(p.zoom * 1.6, 40) }));
+  const handleZoomOut = () => setPosition((p) => ({ ...p, zoom: Math.max(p.zoom / 1.6, 0.8) }));
+  const handleReset = () => setPosition({ coordinates: [-20, 20], zoom: 1 });
+  const focusCity = (c: City) =>
+    setPosition({ coordinates: c.coords as [number, number], zoom: 8 });
 
   return (
     <section id="travels" className="relative py-24 sm:py-32">
