@@ -20,7 +20,7 @@ jobs:
     env:
       # If your repo is "our-story", keep "/our-story/".
       # If your repo is "USERNAME.github.io", set this to "/".
-      BASE_PATH: /our-story/
+      BASE_PATH: /two-hearts-journey/
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2

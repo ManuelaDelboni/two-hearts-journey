@@ -70,7 +70,6 @@ function Index() {
               WebkitTextStroke: "1px oklch(0.52 0.22 255 / 0.18)",
             }}
           >
-            2
           </span>
         </motion.div>
         <div className="mx-auto max-w-4xl text-center">
