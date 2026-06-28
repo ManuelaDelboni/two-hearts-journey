@@ -20,7 +20,7 @@ jobs:
     env:
       # If your repo is "our-story", keep "/our-story/".
       # If your repo is "USERNAME.github.io", set this to "/".
-      BASE_PATH: /
+      BASE_PATH: /two-hearts-journey/
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -40,6 +40,8 @@ jobs:
           else
             cp -r dist ./_site
           fi
+          # Disable Jekyll so GitHub Pages doesn't ignore _assets/ directories
+          touch ./_site/.nojekyll
           # SPA fallback so deep links work on Pages
           if [ -f "./_site/index.html" ]; then
             cp ./_site/index.html ./_site/404.html
