@@ -1,6 +1,4 @@
 {
   "name": "two-hearts-journey",
-  "assets": {
-    "directory": "./dist"
-  }
+  "compatibility_date": "2026-06-28"
 }
