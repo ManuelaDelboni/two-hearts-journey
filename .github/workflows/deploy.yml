@@ -1,26 +1,13 @@
-name: Deploy to GitHub Pages
+name: Deploy to Cloudflare Pages
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
-
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      # If your repo is "our-story", keep "/our-story/".
-      # If your repo is "USERNAME.github.io", set this to "/".
-      BASE_PATH: /two-hearts-journey/
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -29,33 +16,9 @@ jobs:
       - run: bun install --frozen-lockfile
       - name: Build
         run: bun run build
-      - name: Prepare static output
-        run: |
-          # TanStack Start (nitro) emits the client bundle under .output/public
-          # by default. Fallback to dist/ if a custom config changed it.
-          if [ -d ".output/public" ]; then
-            cp -r .output/public ./_site
-          elif [ -d "dist/client" ]; then
-            cp -r dist/client ./_site
-          else
-            cp -r dist ./_site
-          fi
-          # Disable Jekyll so GitHub Pages doesn't ignore _assets/ directories
-          touch ./_site/.nojekyll
-          # SPA fallback so deep links work on Pages
-          if [ -f "./_site/index.html" ]; then
-            cp ./_site/index.html ./_site/404.html
-          fi
-      - uses: actions/upload-pages-artifact@v3
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
-          path: ./_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy .output/public --project-name=two-hearts-journey
