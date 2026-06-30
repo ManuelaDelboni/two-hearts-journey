@@ -4,23 +4,225 @@
     "subtitle": "Dois pontos no mapa, uma linha que não se rompe."
   },
   "cities": [
-    { "id": "paris", "name": "Paris", "country": "França", "type": "home", "coords": [2.3522, 48.8566], "note": "Nossa casa europeia.", "photo": "" },
-    { "id": "ribeirao", "name": "Ribeirão Preto", "country": "Brasil", "type": "home", "coords": [-47.8103, -21.1775], "note": "Onde tudo começou.", "photo": "" },
-    { "id": "london", "name": "London", "country": "Reino Unido", "type": "visit", "coords": [-0.1276, 51.5072], "note": "Londres — uma das palavras-chave da nossa história.", "photo": "" },
-    { "id": "paris-jo", "name": "Paris JO 2024", "country": "França", "type": "visit", "coords": [2.3522, 48.8566], "note": "Jeux Olympiques 2024.", "photo": "" },
-    { "id": "amsterdam", "name": "Amsterdam", "country": "Países Baixos", "type": "visit", "coords": [4.9041, 52.3676], "note": "Canais e bicicletas.", "photo": "" },
-    { "id": "champagne", "name": "Champagne", "country": "França", "type": "visit", "coords": [4.0333, 49.0500], "note": "Bolhas e brindes.", "photo": "" },
-    { "id": "munich", "name": "Munich", "country": "Alemanha", "type": "visit", "coords": [11.5820, 48.1351], "note": "Cerveja e arquitetura.", "photo": "" },
-    { "id": "venise", "name": "Venise", "country": "Itália", "type": "visit", "coords": [12.3155, 45.4408], "note": "Gôndolas ao entardecer.", "photo": "" },
-    { "id": "annecy", "name": "Annecy", "country": "França", "type": "visit", "coords": [6.1294, 45.8992], "note": "O lago mais azul.", "photo": "" },
-    { "id": "saint-michel", "name": "Mont Saint-Michel", "country": "França", "type": "visit", "coords": [-1.5114, 48.6361], "note": "Uma ilha do tempo.", "photo": "" },
-    { "id": "deauville", "name": "Deauville", "country": "França", "type": "visit", "coords": [0.0683, 49.3601], "note": "Mar e calçadão.", "photo": "" },
-    { "id": "belo-horizonte", "name": "Belo Horizonte", "country": "Brasil", "type": "visit", "coords": [-43.9378, -19.9167], "note": "Pão de queijo e família.", "photo": "" },
-    { "id": "campos", "name": "Campos do Jordão", "country": "Brasil", "type": "visit", "coords": [-45.5912, -22.7393], "note": "Frio brasileiro.", "photo": "" },
-    { "id": "miguelopolis", "name": "Miguelópolis", "country": "Brasil", "type": "visit", "coords": [-48.0289, -20.1797], "note": "Interior e céu aberto.", "photo": "" },
-    { "id": "inhotim", "name": "Inhotim", "country": "Brasil", "type": "visit", "coords": [-44.1830, -20.1235], "note": "Arte ao ar livre.", "photo": "" },
-    { "id": "barretos", "name": "Barretos", "country": "Brasil", "type": "visit", "coords": [-48.5687, -20.5575], "note": "Festa de peão.", "photo": "" },
-    { "id": "confins", "name": "Confins", "country": "Brasil", "type": "visit", "coords": [-43.9719, -19.6244], "note": "Aeroporto, abraço, despedida.", "photo": "" },
-    { "id": "brotas", "name": "Brotas", "country": "Brasil", "type": "visit", "coords": [-48.1256, -22.2792], "note": "Aventura e cachoeiras.", "photo": "" }
+    { "id": "paris", "name": "Paris", "country": "França", "type": "home", "coords": [2.3522, 48.8566], "note": "Nossa casa europeia.",   "photos": [
+        "/photos/paris-1.jpg",
+        "/photos/paris-2.jpg",
+        "/photos/paris-3.jpg",
+        "/photos/paris-4.jpg",
+        "/photos/paris-5.jpg",
+        "/photos/paris-6.jpg",
+        "/photos/paris-7.jpg",
+        "/photos/paris-8.jpg",
+        "/photos/paris-9.jpg",
+        "/photos/paris-10.jpg",
+        "/photos/paris-11.jpg",
+        "/photos/paris-12.jpg",
+        "/photos/paris-13.jpg",
+        "/photos/paris-14.jpg",
+        "/photos/paris-15.jpg",
+        "/photos/paris-16.jpg",
+        "/photos/paris-17.jpg",
+        "/photos/paris-18.jpg"
+      ] },
+    { "id": "ribeirao", "name": "Ribeirão Preto", "country": "Brasil", "type": "home", "coords": [-47.8103, -21.1775], "note": "Nosso futuro lar.", "photos": [
+        "/photos/RP-1.jpg",
+        "/photos/RP-2.jpg",
+        "/photos/RP-3.jpg",
+        "/photos/RP-4.jpg",
+        "/photos/RP-5.jpg",
+        "/photos/RP-6.jpg",
+        "/photos/RP-7.jpg",
+        "/photos/RP-8.jpg",
+        "/photos/RP-9.jpg",
+        "/photos/RP-10.jpg",
+        "/photos/RP-11.jpg",
+        "/photos/RP-12.jpg",
+        "/photos/RP-13.jpg",
+        "/photos/RP-14.jpg",
+        "/photos/RP-15.jpg",
+        "/photos/RP-16.jpg"
+      ] },
+    { "id": "london", "name": "London", "country": "Reino Unido", "type": "visit", "coords": [-0.1276, 51.5072], "note": "Onde tudo começou.",  "photos": [
+        "/photos/londre-1.jpg",
+        "/photos/londre-2.jpg",
+        "/photos/londre-3.jpg",
+        "/photos/londre-4.jpg",
+        "/photos/londre-5.jpg",
+        "/photos/londre-6.jpg",
+        "/photos/londre-7.jpg",
+        "/photos/londre-8.jpg",
+        "/photos/londre-9.jpg",
+        "/photos/londre-10.jpg",
+        "/photos/londre-11.jpg",
+        "/photos/londre-12.jpg",
+        "/photos/londre-13.jpg",
+        "/photos/londre-14.jpg",
+        "/photos/londre-15.jpg",
+        "/photos/londre-16.jpg"
+      ] },
+    { "id": "amsterdam", "name": "Amsterdam", "country": "Países Baixos", "type": "visit", "coords": [4.9041, 52.3676], "note": "Nossa primeira viagem.",  "photos": [
+        "/photos/ams-1.jpg",
+        "/photos/ams-2.jpg",
+        "/photos/ams-3.jpg",
+        "/photos/ams-4.jpg",
+        "/photos/ams-5.jpg",
+        "/photos/ams-6.jpg"
+      ] },
+    { "id": "champagne", "name": "Champagne", "country": "França", "type": "visit", "coords": [4.0333, 49.0500], "note": "Nossa primeira roadtrip.", "photos": [
+        "/photos/champagne-1.jpg",
+        "/photos/champagne-2.jpg",
+        "/photos/champagne-3.jpg",
+        "/photos/champagne-4.jpg"
+      ] },
+    { "id": "munich", "name": "Munich", "country": "Alemanha", "type": "visit", "coords": [11.5820, 48.1351], "note": "Oktoberfest!.",   "photos": [
+        "/photos/munich-1.jpg",
+        "/photos/munich-2.jpg",
+        "/photos/munich-3.jpg",
+        "/photos/munich-4.jpg"
+      ] },
+    { "id": "venise", "name": "Venise", "country": "Itália", "type": "visit", "coords": [12.3155, 45.4408], "note": "Onde nos tornamos mais fortes.",  "photos": [
+        "/photos/venise-1.jpg",
+        "/photos/venise-2.jpg",
+        "/photos/venise-3.jpg",
+        "/photos/venise-4.jpg",
+        "/photos/venise-5.jpg"
+      ] },
+    { "id": "annecy", "name": "Annecy", "country": "França", "type": "visit", "coords": [6.1294, 45.8992], "note": "Viagem cheia de surpresas.",  "photos": [
+        "/photos/annecy-1.jpg",
+        "/photos/annecy-2.jpg",
+        "/photos/annecy-3.jpg",
+        "/photos/annecy-4.jpg"
+      ] },
+    { "id": "saint-michel", "name": "Mont Saint-Michel", "country": "França", "type": "visit", "coords": [-1.5114, 48.6361], "note": "Uma das viagens mais gostosas.", "photos": [
+        "/photos/sm-1.jpg",
+        "/photos/sm-2.jpg",
+        "/photos/sm-3.jpg",
+        "/photos/sm-4.jpg"
+      ] },
+    { "id": "deauville", "name": "Deauville", "country": "França", "type": "visit", "coords": [0.0683, 49.3601], "note": "Mar, encontros e caminhadas.", "photos": [
+        "/photos/deauville-1.jpg"
+      ] },
+    { "id": "belo-horizonte", "name": "Belo Horizonte", "country": "Brasil", "type": "visit", "coords": [-43.9378, -19.9167], "note": "Pão de queijo e família.",   "photos": [
+        "/photos/bh-1.jpg",
+        "/photos/bh-2.jpg",
+        "/photos/bh-3.jpg",
+        "/photos/bh-4.jpg",
+        "/photos/bh-5.jpg",
+        "/photos/bh-6.jpg",
+        "/photos/bh-7.jpg",
+        "/photos/bh-8.jpg"
+      ] },
+    { "id": "campos", "name": "Campos do Jordão", "country": "Brasil", "type": "visit", "coords": [-45.5912, -22.7393], "note": "Viagem em família.",  "photos": [
+        "/photos/cj-1.jpg",
+        "/photos/cj-2.jpg",
+        "/photos/cj-3.jpg",
+        "/photos/cj-4.jpg",
+        "/photos/cj-5.jpg",
+        "/photos/cj-6.jpg"
+      ] },
+    { "id": "miguelopolis", "name": "Miguelópolis", "country": "Brasil", "type": "visit", "coords": [-48.0289, -20.1797], "note": "Conhecendo outro cantinho seu.",    "photos": [
+        "/photos/miguelopolis-1.jpg",
+        "/photos/miguelopolis-2.jpg",
+        "/photos/miguelopolis-3.jpg",
+        "/photos/miguelopolis-4.jpg",
+        "/photos/miguelopolis-5.jpg",
+        "/photos/miguelopolis-6.jpg",
+        "/photos/miguelopolis-7.jpg"
+      ] },
+    { "id": "ouro-preto", "name": "Ouro Preto", "country": "Brasil", "type": "visit", "coords": [-43.5039, -20.3853], "note": "Ouro é viajar com você.", "photos": [
+        "/photos/OP-1.jpg",
+        "/photos/OP-2.jpg",
+        "/photos/OP-3.jpg"
+      ] },
+    { "id": "inhotim", "name": "Inhotim", "country": "Brasil", "type": "visit", "coords": [-44.1830, -20.1235], "note": "Arte & amor.",  "photos": [
+        "/photos/inhotim-1.jpg",
+        "/photos/inhotim-2.jpg",
+        "/photos/inhotim-3.jpg",
+        "/photos/inhotim-4.jpg",
+        "/photos/inhotim-5.jpg",
+        "/photos/inhotim-6.jpg",
+        "/photos/inhotim-7.jpg"
+      ] },
+    { "id": "barretos", "name": "Barretos", "country": "Brasil", "type": "visit", "coords": [-48.5687, -20.5575], "note": "Festa de peão.",   "photos": [
+        "/photos/barretos-1.jpg",
+        "/photos/barretos-2.jpg",
+        "/photos/barretos-3.jpg"
+      ] },
+    { "id": "confins", "name": "Confins", "country": "Brasil", "type": "visit", "coords": [-43.9719, -19.6244], "note": "Hotel fazenda & família.",  "photos": [
+        "/photos/confins-1.jpg",
+        "/photos/confins-2.jpg",
+        "/photos/confins-3.jpg",
+        "/photos/confins-4.jpg"
+      ] },
+    { "id": "brotas", "name": "Brotas", "country": "Brasil", "type": "visit", "coords": [-48.1256, -22.2792], "note": "Amor, aventura e começo.",  "photos": [
+        "/photos/brotas-1.jpg",
+        "/photos/brotas-2.jpg",
+        "/photos/brotas-3.jpg",
+        "/photos/brotas-4.jpg",
+        "/photos/brotas-5.jpg",
+        "/photos/brotas-6.jpg",
+        "/photos/brotas-7.jpg"
+      ] },
+    { "id": "roma", "name": "Roma", "country": "Itália", "type": "visit", "coords": [12.4964, 41.9028], "note": "Primeira viagem com a sua família.",  "photos": [
+        "/photos/roma-1.jpg",
+        "/photos/roma-2.jpg",
+        "/photos/roma-3.jpg",
+        "/photos/roma-4.jpg",
+        "/photos/roma-5.jpg",
+        "/photos/roma-6.jpg",
+        "/photos/roma-7.jpg",
+        "/photos/roma-8.jpg"
+      ] },
+    { "id": "geneva", "name": "Geneva", "country": "Suíça", "type": "visit", "coords": [6.1432, 46.2044], "note": "Rápida e especial.",  "photos": [
+        "/photos/geneva-1.jpg",
+        "/photos/geneva-2.jpg"
+      ] },
+    { "id": "pontorson", "name": "Pontorson", "country": "França", "type": "visit", "coords": [-1.5083, 48.5583], "note": "Sempre no nosso coração e risadas.", "photos": [
+        "/photos/pontorson-1.jpg"
+      ] },
+    { "id": "etretat", "name": "Étretat", "country": "França", "type": "visit", "coords": [0.2047, 49.7077], "note": "Por do sol mais que especial.", "photos": [
+        "/photos/etretat-1.jpg",
+        "/photos/etretat-2.jpg",
+        "/photos/etretat-3.jpg",
+        "/photos/etretat-4.jpg",
+        "/photos/etretat-5.jpg",
+        "/photos/etretat-6.jpg"
+      ] },
+    { "id": "giverny", "name": "Giverny", "country": "França", "type": "visit", "coords": [1.5333, 49.0767], "note": "Qualquer lugar vale a pena com você.",  "photos": [
+        "/photos/giverny-1.jpg"
+      ] },
+    { "id": "santiago", "name": "Santiago", "country": "Chile", "type": "visit", "coords": [-70.6693, -33.4489], "note": "Nosso primeiro natal juntos.", "photos": [
+        "/photos/santiago-1.jpg",
+        "/photos/santiago-2.jpg",
+        "/photos/santiago-3.jpg",
+        "/photos/santiago-4.jpg",
+        "/photos/santiago-5.jpg",
+        "/photos/santiago-6.jpg",
+        "/photos/santiago-7.jpg",
+        "/photos/santiago-8.jpg",
+        "/photos/santiago-9.jpg"
+      ] },
+    { "id": "lisboa", "name": "Lisboa", "country": "Portugal", "type": "visit", "coords": [-9.1393, 38.7223], "note": "Amigos e família.",  "photos": [
+        "/photos/lisboa-1.jpg",
+        "/photos/lisboa-2.jpg",
+        "/photos/lisboa-3.jpg"
+      ] },
+    { "id": "saint-malo", "name": "Saint-Malo", "country": "França", "type": "visit", "coords": [-2.0256, 48.6492], "note": "Roadtrip romântica.", "photos": [
+        "/photos/saintm-1.jpg",
+        "/photos/saintm-2.jpg",
+        "/photos/saintm-3.jpg"
+      ] },
+    { "id": "rennes", "name": "Rennes", "country": "França", "type": "visit", "coords": [-1.6778, 48.1173], "note": "Te apresentando uma parte da minha história.", "photos": [
+        "/photos/rennes-1.jpg"
+      ] },
+    { "id": "fontainebleau", "name": "Fontainebleau", "country": "França", "type": "visit", "coords": [2.6993, 48.4020], "note": "Nosso amor é real", "photos": [
+        "/photos/font-1.jpg",
+        "/photos/font-2.jpg"
+      ] },
+    { "id": "guaruja", "name": "Guarujá", "country": "Brasil", "type": "visit", "coords": [-46.2564, -23.9933], "note": "Rápida e pra lá de especial.",  "photos": [
+        "/photos/guaruja-1.jpg",
+        "/photos/guaruja-2.jpg",
+        "/photos/guaruja-3.jpg"
+      ] }
   ]
 }

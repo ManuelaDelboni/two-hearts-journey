@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Nossa História — 2 anos do primeiro beijo" },
-      { name: "description", content: "Um livro interativo para comemorar 2 anos do nosso primeiro beijo. Viagens, estatísticas, jogos e desejos." },
+      { name: "description", content: "Uma viagem pelas memórias que começaram em Londres e continuam sendo escritas todos os dias." },
       { property: "og:title", content: "Nossa História — 2 anos" },
       { property: "og:description", content: "Um livro interativo de amor: viagens, estatísticas, jogos e estrelas." },
       { property: "og:type", content: "website" },
@@ -97,7 +97,7 @@ function Index() {
             transition={{ delay: 2.3, duration: 1 }}
             className="mx-auto mt-8 max-w-xl font-display text-lg italic text-foreground/70 sm:text-xl"
           >
-            Um livro interativo sobre as cidades, os números, os jogos e os desejos que escrevemos juntos.
+            Uma viagem pelas memórias que começaram em Londres e continuam sendo escritas todos os dias..
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 10 }}
