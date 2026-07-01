@@ -1,9 +1,9 @@
 {
   "title": "Level: Us",
-  "subtitle": "Quatro mini-jogos sobre a gente.",
+  "subtitle": "Quatro mini games sobre a gente.",
   "wordSearch": {
     "title": "Caça-Palavras",
-    "words": ["DESTINO", "PRINCESA", "COMECO", "BEIJO", "LONDRES", "FESTA", "AMOR", "CONEXAO"]
+    "words": ["DESTINO", "PRINCESA", "COMECO", "BEIJO", "LONDRES", "FESTA", "AMOR", "CONEXAO", "INTERCAMBIO", "INGLES"]
   },
   "tennis": {
     "title": "Tennis Match",
@@ -17,11 +17,35 @@
   },
   "f1": {
     "title": "F1: Nossa Pista",
-    "checkpoints": [
-      { "date": "17/06/2024", "title": "Primeiro encontro", "memory": "O dia em que nossos olhos se cruzaram pela primeira vez. Tudo começou ali, sem a gente saber." },
-      { "date": "29/06/2024", "title": "A noite dos príncipes", "memory": "Encontramos os príncipes. E também encontramos a gente — mais profundo, mais real." },
-      { "date": "01/07/2024", "title": "O primeiro beijo", "memory": "Um beijo curto, um capítulo inteiro. O começo oficial da nossa história." },
-      { "date": "09/09/2025", "title": "Oficializamos", "memory": "Não era mais uma história contada em segredo. Agora era nossa, no mundo." }
+    "cityOrder": [
+      "london",
+      "paris",
+      "amsterdam",
+      "champagne",
+      "munich",
+      "venise",
+      "roma",
+      "belo-horizonte",
+      "ribeirao",
+      "miguelopolis",
+      "annecy",
+      "geneva",
+      "pontorson",
+      "saint-michel",
+      "deauville",
+      "etretat",
+      "giverny",
+      "campos",
+      "ouro-preto",
+      "inhotim",
+      "confins",
+      "barretos",
+      "brotas",
+      "santiago",
+      "lisboa",
+      "saint-malo",
+      "rennes",
+      "guaruja"
     ]
   },
   "sinuca": {

@@ -1,7 +1,7 @@
 {
   "intro": {
     "title": "Travels",
-    "subtitle": "Dois pontos no mapa, uma linha que não se rompe."
+    "subtitle": "Dois pontos no mapa, uma linha que não se rompe. E quem diria que um beijo poderia carregar tudo isso?"
   },
   "cities": [
     { "id": "paris", "name": "Paris", "country": "França", "type": "home", "coords": [2.3522, 48.8566], "note": "Nossa casa europeia.",   "photos": [

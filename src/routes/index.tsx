@@ -8,6 +8,46 @@ import { StatisticsSection } from "@/components/StatisticsSection";
 import { GamesSection } from "@/components/GamesSection";
 import { FinalChapter } from "@/components/FinalChapter";
 
+const KISS_MARK_PATH =
+  "M9,29 C17,13 24,7 35,8 C44,9 49,15 50,20 C51,15 56,9 65,8 C76,7 83,13 91,29 " +
+  "C86,39 76,47 63,49 C57,50.5 52,50.5 50,49.5 C48,50.5 43,50.5 37,49 " +
+  "C24,47 14,39 9,29 Z";
+
+function KissMark({ size, className }: { size: number; className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 100 56"
+      width={size}
+      height={size * 0.56}
+      className={className}
+      fill="currentColor"
+    >
+      <path d={KISS_MARK_PATH} />
+    </svg>
+  );
+}
+
+const kissMarks = [
+  { top: "6%", left: "10%", size: 84, opacity: 0.12, rotate: -14 },
+  { top: "12%", left: "22%", size: 56, opacity: 0.08, rotate: 10 },
+  { top: "9%", left: "48%", size: 68, opacity: 0.09, rotate: -6 },
+  { top: "14%", left: "76%", size: 112, opacity: 0.13, rotate: 16 },
+  { top: "7%", left: "90%", size: 58, opacity: 0.07, rotate: -20 },
+  { top: "26%", left: "6%", size: 72, opacity: 0.1, rotate: 8 },
+  { top: "32%", left: "88%", size: 86, opacity: 0.09, rotate: -10 },
+  { top: "48%", left: "4%", size: 60, opacity: 0.08, rotate: 18 },
+  { top: "52%", left: "94%", size: 74, opacity: 0.11, rotate: -16 },
+  { top: "66%", left: "9%", size: 90, opacity: 0.1, rotate: -8 },
+  { top: "70%", left: "85%", size: 58, opacity: 0.08, rotate: 12 },
+  { top: "80%", left: "18%", size: 76, opacity: 0.09, rotate: -18 },
+  { top: "85%", left: "40%", size: 58, opacity: 0.07, rotate: 6 },
+  { top: "82%", left: "62%", size: 88, opacity: 0.11, rotate: -12 },
+  { top: "88%", left: "80%", size: 72, opacity: 0.08, rotate: 20 },
+  { top: "20%", left: "60%", size: 56, opacity: 0.06, rotate: -4 },
+  { top: "40%", left: "34%", size: 56, opacity: 0.06, rotate: 14 },
+  { top: "58%", left: "68%", size: 58, opacity: 0.06, rotate: -22 },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -44,33 +84,27 @@ function Index() {
 
       {/* Hero */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 pt-24">
-        <div className="pointer-events-none absolute inset-0 -z-10 opacity-60"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, oklch(0.3 0.08 30 / 0.6), transparent 60%)",
-          }}
-        />
         <motion.div
           aria-hidden
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center select-none"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2.4, ease: [0.16, 1, 0.3, 1] }}
+          className="pointer-events-none absolute inset-0 -z-10 overflow-hidden select-none"
         >
-          <span
-            className="font-display leading-none"
-            style={{
-              fontSize: "clamp(20rem, 60vw, 56rem)",
-              fontWeight: 800,
-              background:
-                "linear-gradient(180deg, oklch(0.52 0.22 255 / 0.10), oklch(0.52 0.22 255 / 0.02))",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              WebkitTextStroke: "1px oklch(0.52 0.22 255 / 0.18)",
-            }}
-          >
-          </span>
+          {kissMarks.map((k, i) => (
+            <div
+              key={i}
+              className="absolute text-gold"
+              style={{
+                top: k.top,
+                left: k.left,
+                opacity: k.opacity,
+                transform: `rotate(${k.rotate}deg)`,
+              }}
+            >
+              <KissMark size={k.size} />
+            </div>
+          ))}
         </motion.div>
         <div className="mx-auto max-w-4xl text-center">
           <motion.p

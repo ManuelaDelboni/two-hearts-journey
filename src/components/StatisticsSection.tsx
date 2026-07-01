@@ -28,7 +28,7 @@ function Counter({ to, suffix }: { to: number; suffix: string }) {
 
 export function StatisticsSection() {
   return (
-    <section id="statistics" className="relative py-24 sm:py-32">
+    <section id="statistics" className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionTitle eyebrow="Chapter II" title={stats.title} subtitle={stats.subtitle} />
 

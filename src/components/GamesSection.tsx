@@ -18,7 +18,7 @@ export function GamesSection() {
   const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("word");
 
   return (
-    <section id="games" className="relative py-24 sm:py-32">
+    <section id="games" className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <SectionTitle eyebrow="Chapter III" title={games.title} subtitle={games.subtitle} />
 

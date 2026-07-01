@@ -11,7 +11,7 @@ const SERIF = '"Cormorant Garamond", "Playfair Display", Georgia, serif';
 const ROMAN = ["i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"];
 
 const { salutation, paragraphs, signature } = book.letter;
-const PARAS_PER_PAGE = 2;
+const PARAS_PER_PAGE = 3;
 const CONTENT_PAGES = Array.from(
   { length: Math.ceil(paragraphs.length / PARAS_PER_PAGE) },
   (_, i) => ({
@@ -395,10 +395,9 @@ export function BookDialog({ open, onClose }: Props) {
 
             {/* Entry animation wrapper */}
             <motion.div
-              initial={{ rotateX: -18, scale: 0.88, opacity: 0 }}
-              animate={{ rotateX: 0,   scale: 1,    opacity: 1 }}
+              initial={{ y: 24, scale: 0.92, opacity: 0 }}
+              animate={{ y: 0,  scale: 1,    opacity: 1 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              style={{ transformStyle: "preserve-3d" }}
             >
               {/* Page stack */}
               <div style={{ position: "relative", transformStyle: "preserve-3d" }}>

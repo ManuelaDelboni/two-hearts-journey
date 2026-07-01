@@ -96,7 +96,7 @@ export function TravelsSection() {
   const visits = travels.cities.filter((c) => c.type === "visit");
 
   return (
-    <section id="travels" className="relative py-24 sm:py-32">
+    <section id="travels" className="relative py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <SectionTitle
           eyebrow="Chapter I"
@@ -306,7 +306,7 @@ function PassportModal({ city, onClose }: { city: City; onClose: () => void }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[9999] flex items-end justify-center sm:items-center bg-black/75 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex h-dvh items-center justify-center bg-black/75 p-4 backdrop-blur-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -318,7 +318,7 @@ function PassportModal({ city, onClose }: { city: City; onClose: () => void }) {
         exit={{ y: 20, opacity: 0 }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
         onClick={(e) => e.stopPropagation()}
-        className="relative w-full max-w-sm overflow-hidden rounded-2xl"
+        className="relative w-full max-w-md overflow-hidden rounded-2xl"
         style={{
           background: "linear-gradient(160deg, oklch(0.20 0.05 240), oklch(0.15 0.03 240))",
           border: "1px solid oklch(0.35 0.08 240 / 0.5)",
